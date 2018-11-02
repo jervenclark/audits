@@ -14,6 +14,9 @@ class Audit extends Model
      */
     protected $fillable = [
         'event',
+        'new_values',
+        'old_values',
+        'user_id',
     ];
 
     /**
