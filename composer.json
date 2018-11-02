@@ -1,0 +1,43 @@
+{
+    "name": "jervenclark/audits",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jerven Clark Chua",
+            "email": "jervenclark@gmail.com",
+            "homepage": "http://github.com/jervenclark"
+        }
+    ],
+    "homepage": "https://github.com/jervenclark/audits",
+    "keywords": ["Laravel", "Audits"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jervenclark\\Audits\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jervenclark\\Audits\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jervenclark\\Audits\\AuditsServiceProvider"
+            ],
+            "aliases": {
+                "Audits": "Jervenclark\\Audits\\Facades\\Audits"
+            }
+        }
+    }
+}
