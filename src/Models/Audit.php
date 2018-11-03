@@ -17,6 +17,7 @@ class Audit extends Model
         'new_values',
         'old_values',
         'user_id',
+        'user_type',
     ];
 
     /**

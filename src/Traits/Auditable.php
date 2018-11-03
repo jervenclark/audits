@@ -39,9 +39,8 @@ trait Auditable
             $details['new_values'] = json_encode($new_values);
             $details['old_values'] = json_encode($old_values);
         }
-        if (Auth::check()) {
-            $details['user_id'] = Auth::user()->id;
-        }
+        $details['user_type'] = 'system';
+        if (Auth::check()) $details['user_id'] = Auth::user()->id;
         $model->audits()->create($details);
     }
 
