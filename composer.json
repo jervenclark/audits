@@ -1,6 +1,6 @@
 {
     "name": "jervenclark/audits",
-    "description": ":description",
+    "description": "Event auditing for Laravel models",
     "license": "MIT",
     "authors": [
         {
