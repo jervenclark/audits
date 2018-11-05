@@ -34,10 +34,9 @@ trait Auditable
         $details = ['event' => $event];
         if ($model->isDirty()) {
             $new_values = $model->getDirty();
+            $details['new_values'] = $new_values;
             $old_values = $model->getOriginal();
-            $old_values = array_intersect_key($old_values, $new_values);
-            $details['new_values'] = json_encode($new_values);
-            $details['old_values'] = json_encode($old_values);
+            $details['old_values'] = array_intersect_key($old_values, $new_values);
         }
         $details['user_type'] = 'system';
         if (Auth::check()) $details['user_id'] = Auth::user()->id;
