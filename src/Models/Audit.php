@@ -28,6 +28,22 @@ class Audit extends Model
     protected $casts = [
         'new_values' => 'array',
         'old_values' => 'array',
+        'tags'       => 'array',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'id',
+        'updated_at',
+        'user_id',
+        'auditable_type',
+        'auditable_id',
+        'new_values',
+        'old_values'
     ];
 
     /**
