@@ -66,4 +66,22 @@ class Audit extends Model
         return $this->morphTo();
     }
 
+    /**
+     * Add auditable scope
+     *
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAuditable($query, $id) {
+        return (!is_int($id)) ? $query : $query->where('auditable_id', $id);
+    }
+
+    /**
+     * Add auditable_type scope
+     *
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeType($query, $type) {
+        return (!is_string($type)) ? $query : $query->where('auditable_type', $type);
+    }
+
 }
